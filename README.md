@@ -61,38 +61,40 @@ Using Auto Correlation and Partial Auto Correlation plots we can get a sense of 
 Using the ACF and PACF plots I made some assumptions of the potential variables for p, d, q, P, D, Q and S and then tested different values to see how they worked together.
 
 
-|p|d|q|P|D|Q|S|Mean Absolute Value|                     
+|p|d|q|P|D|Q|S|AIC|                     
 |---|---|---|---|---|---|---|---|
-3|1|2|4|0|3|12|1.224938
-4|1|2|4|0|3|12|1.229332
-4|1|1|4|0|3|12|1.233564
-3|1|1|4|0|3|12|1.237515
-8|1|2|4|0|3|12|1.245316
-4|0|2|3|0|5|12|1.245989
-3|0|0|2|0|3|12|1.251763
+3|0|2|4|0|5|12|466.514743
+3|0|1|4|0|5|12|467.403062
+3|0|0|4|0|5|12|467.968364
+4|0|2|4|0|5|12|468.392006
+4|0|1|4|0|5|12|469.380625
+4|0|0|4|0|5|12|469.956111
+3|0|0|2|0|5|12|475.375037
 
-![](./Images/SARIMAX312.png)
+![](./Images/SARIMAX302.png)
 
-The average dissolved oxygen level in the test data is 10.73 mg/L. My best model is predicting with a mean absolute of 1.22 mg/L.
+The average dissolved oxygen level in the test data is 10.73 mg/L.
+
+I used Akaike information criterion(AIC) to evaluate the model. AIC reviews information loss and access the fit of the model versus the simplicity and gives it a score. The lower the AIC the better the model.
 
 ## Primary findings
 
 #### Forecasted Data
 
-|Month|Predicted Mean|                  
-|---|---|
-January|12.657800|
-February|12.391092
-March|12.118088
-April|11.025860
-May|10.793230
-June|10.279456
-July|10.434176
-August|10.083808
-September|11.292642
-October|11.644566
-November|11.289843
-December|11.044667
+Month|	mean |	mean_se	| mean_ci_lower |	mean_ci_upper
+|---|---|---|---|---|
+January|	11.554036	|1.412845|	8.784910|	14.323161
+February	|11.652757|	1.412926|	8.883473|	14.422040
+March|11.434735	|1.412901	|8.665500	|14.203971
+April|11.105064	|1.412868|	8.335894|	13.874235
+May|10.997677	|1.412860|	8.228522|	13.766833
+June|11.336283	|1.412858|	8.567133|	14.105434
+July|10.792287|	1.412857|	8.023138|	13.561436
+August|10.979213	|1.412771|	8.210233|	13.748193
+September|12.097283	|1.412650|	9.328540|	14.866026
+October|12.021462|	1.412264|	9.253476|	14.789448
+November|11.698560|	1.412221|	8.930657|	14.466463
+December|13.482244|	1.412097|	10.714584|	16.249904
 
 Since we know that the stream is relatively stationary we are able to use these forecasted levels for the year 2019 to keep an eye on the health of the stream.
 

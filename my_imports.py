@@ -48,6 +48,7 @@ def sarimax_plot(train_df, test_df, train_column, test_column,
 
     # Evaluate predictions.
     mae = mean_absolute_error(test_column, preds)
+    aic = model.aic
 
     # Plot data.
     plt.figure(figsize=(10,6))
@@ -58,7 +59,7 @@ def sarimax_plot(train_df, test_df, train_column, test_column,
     plt.legend(labels = ('Train', 'Test', 'Predicted'))
     plt.show();
     #creating a parameter dictionary to be used for evaluating model
-    parameters = {'mae': mae, 'p': p, 'd': d, 'q': q, 'P': P,
+    parameters = {'mae': mae, 'AIC': aic,'p': p, 'd': d, 'q': q, 'P': P,
                     'D': D, 'Q': Q, 'S': S}
 
 
@@ -82,8 +83,9 @@ def sarimax_eval(train_df, test_df, train_column, test_column,
 
     # Evaluate predictions.
     mae = mean_absolute_error(test_column, preds)
+    aic = model.aic
     #creating a parameter dictionary to be used for evaluating model
-    parameters = {'mae': mae, 'p': p, 'd': d, 'q': q, 'P': P,
+    parameters = {'mae': mae, 'AIC': aic,'p': p, 'd': d, 'q': q, 'P': P,
                     'D': D, 'Q': Q, 'S': S}
 
     return parameters
