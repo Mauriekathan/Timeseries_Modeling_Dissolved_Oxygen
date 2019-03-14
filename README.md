@@ -11,7 +11,8 @@ Dissolved Oxygen is a good indicator of stream health. Using tested levels of di
 [Creating Data for Modeling](./File_creation.py)  
 [Exploring Sites](./Dissolved_Oxygen_Sites_exploration.ipynb)  
 [Formulas for Modeling](./my_imports.py)  
-[Modeling](./Dissolved_Oxygen_modeling.ipynb)
+[SARIMAX Modeling](./Dissolved_Oxygen_modeling.ipynb)
+[LSTM Modeling](./Dissolved_Oxygen_modeling-LSTM.ipynb)
 
 ## What is Dissolved Oxygen and why does it matter?
 Dissolved Oxygen is one of the most common measures of stream and water body quality. Fish and micro-organism require certain levels to maintain health numbers. A healthy range of dissolved oxygen is 8 mg/L to 15 mg/L. Above and below this is unhealthy for the ecosystem.
@@ -56,7 +57,7 @@ The Augmented Dicky is a unit root test that checks your data for stationarity. 
 
 Using Auto Correlation and Partial Auto Correlation plots we can get a sense of what the we should use for variables in our model. We can see a drop off after the second lag from which we can infer a q of 2 or 1. In the partial auto correlation plot we can see the a significant negative correlation at 4 and 8 from which we might infer a p of 4. But since this is seasonal data we can also see some movement surrounding multiples of three so we need to test 3 as well. We can also see a significance at 12 which indicates that there is seasonality to this data. This makes sense with dissolved oxygen.
 
-## Modeling
+## Time Series Modeling
 
 Using the ACF and PACF plots I made some assumptions of the potential variables for p, d, q, P, D, Q and S and then tested different values to see how they worked together.
 
@@ -97,6 +98,11 @@ November|11.698560|	1.412221|	8.930657|	14.466463
 December|13.482244|	1.412097|	10.714584|	16.249904
 
 Since we know that the stream is relatively stationary we are able to use these forecasted levels for the year 2019 to keep an eye on the health of the stream.
+
+## LSTM modeling
+Long term short term memory modeling is a type of recurrent neural network that can be used to do time series analysis. It uses steps previous steps to predict forward. I created a model with a lag on 1 that has a Mean Absolute Error of 1.17 for the test data. This compares to the MAE of 1.319124 for my time series model.
+
+![](LSTM.png)
 
 ## Next Steps
 
