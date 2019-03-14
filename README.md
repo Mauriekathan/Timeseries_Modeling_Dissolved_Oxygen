@@ -11,7 +11,7 @@ Dissolved Oxygen is a good indicator of stream health. Using tested levels of di
 [Creating Data for Modeling](./File_creation.py)  
 [Exploring Sites](./Dissolved_Oxygen_Sites_exploration.ipynb)  
 [Formulas for Modeling](./my_imports.py)  
-[SARIMAX Modeling](./Dissolved_Oxygen_modeling.ipynb)
+[SARIMAX Modeling](./Dissolved_Oxygen_modeling.ipynb)  
 [LSTM Modeling](./Dissolved_Oxygen_modeling-LSTM.ipynb)
 
 ## What is Dissolved Oxygen and why does it matter?
