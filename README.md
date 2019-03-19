@@ -102,7 +102,7 @@ Since we know that the stream is relatively stationary we are able to use these 
 ## LSTM modeling
 Long term short term memory modeling is a type of recurrent neural network that can be used to do time series analysis. It uses steps previous steps to predict forward. I created a model with a lag on 1 that has a Mean Absolute Error of 1.17 for the test data. This compares to the MAE of 1.319124 for my time series model.
 
-![](./Images/LSTM.png)
+![](./Images/LSTM_plot.png)
 
 ## Next Steps
 
